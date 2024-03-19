@@ -1,0 +1,57 @@
+<%layout("layouts/Boilerplate")%>
+    <div class="row ">
+        <h5 class="text-center mb-3">New Campground</h5>
+        <div class="col-6 offset-3">
+            <form action="/campground/new" method="post" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class=" mb-3">
+                    <label class="form-label " for="title">Title</label>
+                    <input class="form-control form-control-sm" type="text" id="title" name="campground[title]" placeholder="Enter Title "
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control form-control-sm" type="text" id="location" name="campground[location]" placeholder="Enter Location"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="price">Campground Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="number" class="form-control form-control-sm" id="price"
+                            aria-label="Amount (to the nearest dollar)" placeholder="00.0" name="campground[price]"
+                            aria-describedby="price-label" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control form-control-sm" rows="3" id="description"
+                    name="campground[description]" placeholder="Enter Description" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2" for="select_file">Upload Files</label>
+                    <div class="input-group mb-3">
+                       <input type="file" class="form-control" name="image" id="select_file" multiple>
+                     </div>
+                <div>
+                    <button class="btn btn-sm btn-success mb-3">Save</button>
+                </div>
+            </form>
+            <div class="mb-3">
+                <a class="btn btn-sm btn-warning" href="/campgrounds">Back to campgrounds</a>
+            </div>
+        </div>
+    </div>
